@@ -56,6 +56,19 @@ legend {
   border-radius: 5px;
 }
 
+.btn-secondary{
+  background-color: unset;
+  border: none;
+  border-color: unset;
+}
+
+.align_center{
+  margin: 0 auto;
+}
+.margin_top5{
+  margin-top: 5px;
+}
+
 .registration_pole{
   border-radius: 5px;
   margin-bottom: 10px;
