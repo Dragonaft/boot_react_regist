@@ -1,0 +1,145 @@
+
+.form_wraper{
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  border: 1px solid #cacaca;
+  margin-top: 100px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.font-weight_min{
+  font-size: 16px;
+}
+
+.radom{
+  display: flex;
+  justify-content: space-between;
+}
+
+legend {
+  padding: 3px 6px;
+  width: auto;
+  margin-bottom: -17px;
+  font-size: 17px;
+}
+
+.button_send{
+  width: 150px;
+  padding:10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #4eab40;
+  border: none;
+  border-radius: 5px;
+}
+.button_clean{
+  width: 100px;
+  padding:10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  margin-top: 20px;
+  background-color: #3F7DBF;
+  border: none;
+  border-radius: 5px;
+}
+
+.registration_pole{
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #cacaca;
+
+}
+
+.body_registration_form{
+  background: linear-gradient(to right, #3e2b96, #74ebd5);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.flux{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.flexel{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.font_weight_100{
+  font-weight: 100;
+}
+
+.font_size_16{
+  font-size: 16px;
+}
+
+.form_input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.border_input{
+  outline: 0;
+  border: none;
+}
+.fieldset_mod{
+  border-radius: 5px;
+  border: 2px solid #cacaca;
+}
+
+.fieldset_mod1{
+  border-radius: 5px;
+  border: 2px solid #cacaca;
+  margin-right: 10px;
+}
+
+.centerText{
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
