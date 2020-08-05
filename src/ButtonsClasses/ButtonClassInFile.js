@@ -8,11 +8,10 @@ class ButtonsClassInFile extends React.Component{
         const typeB = this.props.typeB;
         const textB = this.props.textB;
         const type2B = this.props.typeB;
-        const hrefB = this.props.hrefB;
 
         return(
             <div className={classB}>
-                <button className={typeB} type={type2B} onClick='location.href={hrefB}'>{textB}</button>
+                <button className={typeB} type={type2B}>{textB}</button>
             </div>
         );
     }
