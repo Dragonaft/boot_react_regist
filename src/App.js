@@ -12,9 +12,8 @@ class App extends React.Component{
           <div className="App">
             <Route exact={true} path='/' component={RegistComponents} />
           </div>
-
           <Route exact={true}  path='/login' component={Login}/>
-
+          <Route exact={true}  path='/main' component={RegistComponents}/>
         </Router>
     );
 
