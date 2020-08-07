@@ -11,6 +11,12 @@
   border-radius: 10px;
 }
 
+.color_text{
+  font-size: 16px;
+  color: #ff5443;
+  font-weight: 500;
+}
+
 .font-weight_min{
   font-size: 16px;
 }
@@ -62,11 +68,22 @@ legend {
   border-color: unset;
 }
 
+.centerstaff{
+  align-self: center;
+}
+
 .align_center{
   margin: 0 auto;
 }
 .margin_top5{
   margin-top: 5px;
+}
+.margin_left5{
+  margin-left: 37%;
+}
+
+.margin_bottom-10{
+  margin-bottom: -10px;
 }
 
 .registration_pole{
