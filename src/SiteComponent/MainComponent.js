@@ -1,4 +1,5 @@
 import React from "react";
+import { Stocks } from '/home/sergey/proj/react/boot_react_regist/src/Stocks'
 
 function tableSearch() {
     let phrase = document.getElementById('myInput');
@@ -155,28 +156,28 @@ class MainComponent extends React.Component {
                         </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>mr</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>lol@md.su</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>mr2</td>
-                            <td>Mar2k</td>
-                            <td>Ot2to</td>
-                            <td>lol@md.su</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>mr3</td>
-                            <td>Mark3</td>
-                            <td>Otto3</td>
-                            <td>lol@md.su</td>
-                        </tr>
+                        <Stocks />
+                        {/*<tr>*/}
+                        {/*    <th scope="row">1</th>*/}
+                        {/*    <td>mr</td>*/}
+                        {/*    <td>Mark</td>*/}
+                        {/*    <td>Otto</td>*/}
+                        {/*    <td>lol@md.su</td>*/}
+                        {/*</tr>*/}
+                        {/*<tr>*/}
+                        {/*    <th scope="row">2</th>*/}
+                        {/*    <td>mr2</td>*/}
+                        {/*    <td>Mar2k</td>*/}
+                        {/*    <td>Ot2to</td>*/}
+                        {/*    <td>lol@md.su</td>*/}
+                        {/*</tr>*/}
+                        {/*<tr>*/}
+                        {/*    <th scope="row">3</th>*/}
+                        {/*    <td>mr3</td>*/}
+                        {/*    <td>Mark3</td>*/}
+                        {/*    <td>Otto3</td>*/}
+                        {/*    <td>lol@md.su</td>*/}
+                        {/*</tr>*/}
 
                         </tbody>
                     </table>
