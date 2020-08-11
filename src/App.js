@@ -3,6 +3,7 @@ import './App.css';
 import RegistComponents from "./SiteComponent/RegistComponent.js"
 import Login from "./SiteComponent/Login.js";
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import MainComponent from "./SiteComponent/MainComponent";
 
 
 class App extends React.Component{
@@ -13,6 +14,7 @@ class App extends React.Component{
               <Route exact={true}  path='/' component={RegistComponents}/>
           </div>
           <Route exact={true}  path='/login' component={Login}/>
+          <Route exact={true} path='/main' component={MainComponent}/>
         </Router>
     );
 

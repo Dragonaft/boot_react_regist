@@ -1,7 +1,7 @@
 import React from "react";
 import '/home/sergey/proj/react/boot_react_regist/src/App.css';
 
-class GeneralClassInFile extends React.Component{
+class GeneralClassInFile extends React.Component {
 
     render() {
 
@@ -16,14 +16,14 @@ class GeneralClassInFile extends React.Component{
         const valueC = this.props.valueC;
         const onChangeC = this.props.onChangeC;
 
-        return(
+        return (
             <div className={adress}>
                 <fieldset className={fieldClassName}>
                     <legend><label htmlFor="inputAddress">{generalText}</label></legend>
                     <input type={typeTe} className="form-control border_input" id={ids}
                            pattern={patternT} placeholder={placeholderT} name={name}
-                    value = {valueC}
-                    onChange={onChangeC}/>
+                           value={valueC}
+                           onChange={onChangeC}/>
                 </fieldset>
             </div>
         );

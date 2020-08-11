@@ -1,8 +1,9 @@
 import React from "react";
 import '/home/sergey/proj/react/boot_react_regist/src/App.css';
 import '/home/sergey/proj/react/boot_react_regist/src/SiteComponent/RegistComponent';
+import '/home/sergey/proj/react/boot_react_regist/src/SiteComponent/FormErrors';
 
-class ButtonsClassInFile extends React.Component{
+class ButtonsClassInFile extends React.Component {
 
     render() {
 
@@ -13,11 +14,11 @@ class ButtonsClassInFile extends React.Component{
         const type2A = this.props.type2A;
         const type2B = this.props.typeB;
         const textA = this.props.textA;
-        const disableB = this.props.disableB
+        const disableB = this.props.disableB;
         const valueA = this.props.valueA;
         const nazal = this.props.nazal;
 
-        return(
+        return (
             <div className={classB}>
                 <button className={typeB} type={type2B} disabled={disableB}>{textB}</button>
                 <button id={type2A} className={typeA} type={type2A} onClick={nazal} value={valueA}>{textA}</button>

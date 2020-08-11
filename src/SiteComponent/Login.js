@@ -1,114 +1,139 @@
 import React from 'react';
 import '/home/sergey/proj/react/boot_react_regist/src/App.css';
 import FontClassInFile from "../TextClasses/FontClassInFile";
-import ButtonsClassInFile from "../ButtonsClasses/ButtonClassInFile";
 import {Link} from "react-router-dom";
 import ButtonClassInFile from "../ButtonsClasses/ButtonClassInFile";
-import { FormErrors } from './FormErrors';
+import {FormErrors} from './FormErrors';
 import GeneralClassInFile from "../FieldsClasses/GeneralClassInFile";
 
-class Login extends React.Component{
-    constructor (props) {
+class Login extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            email: '',
             password: '',
-            formErrors: {email: '', password: ''},
-            emailValid: false,
+            login: '',
+            formErrors: {password: '', login: ''},
             passwordValid: false,
+            loginValid: false,
             formValid: false
         }
     }
 
-    handleUserInput (e) {
-        const name = e.target.name;
-        const value = e.target.value;
-        this.setState({[name]: value},
-            () => { this.validateField(name, value) });
-    }
+    //  clearForms = () => {
+    //      document.querySelectorAll('input');
+    //      this.setState({
+    //          this.setState({
+    //              itemvalues: [{}]
+    //          });
+    //          // this.setState({login: "", email: "", password: ""});
+    //          // if (document.getElementById("id1")){
+    //          //     document.getElementById("id1").remove();
+    //      }
+    // }
 
     handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value});
+        this.setState({[name]: value},
+            () => {
+                this.validateField(name, value)
+            });
     }
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
-        let emailValid = this.state.emailValid;
         let passwordValid = this.state.passwordValid;
+        let loginValid = this.state.loginValid;
 
-        switch(fieldName) {
-            case 'email':
-                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-                break;
+        switch (fieldName) {
             case 'password':
                 passwordValid = value.length >= 6;
-                fieldValidationErrors.password = passwordValid ? '': ' is too short';
+                fieldValidationErrors.password = passwordValid ? '' : 'Пароль слишком короткий';
+                break;
+            case 'login':
+                loginValid = value.length <= 60;
+                fieldValidationErrors.login = loginValid ? '' : 'Логин не может быть более 60 символов';
                 break;
             default:
                 break;
         }
-        this.setState({formErrors: fieldValidationErrors,
-            emailValid: emailValid,
-            passwordValid: passwordValid
+        this.setState({
+            formErrors: fieldValidationErrors,
+            passwordValid: passwordValid,
+            loginValid: loginValid
         }, this.validateForm);
     }
 
     validateForm() {
-        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+        this.setState({formValid: this.state.passwordValid && this.state.loginValid});
     }
 
     errorClass(error) {
-        return(error.length === 0 ? '' : 'has-error');
+        return (error.length === 0 ? '' : 'has-error');
     }
 
+    handleReset = () => {
+        this.setState({login: "", password: ""});
+    };
+
     render() {
-        return(
+        return (
             <div className="Login">
-                <div className="panel panel-default">
-                    <FormErrors formErrors={this.state.formErrors} />
-                </div>
                 <div className="form_wraper">
                     <FontClassInFile
-                        textM = "Вход"
+                        textM="Вход"
                     />
                     <form>
                         <GeneralClassInFile
-                            fieldClassName = "fieldset_mod"
-                            generalText = "Логин"
-                            typeTe = "text"
-                            placeholderT = "example"
+                            adress={`login ${this.errorClass(this.state.formErrors.login)}`}
+                            fieldClassName="fieldset_mod"
+                            generalText="Логин"
+                            typeTe="text"
+                            placeholderT="example"
+                            name="login"
+                            valueC={this.state.login}
+                            onChangeC={this.handleUserInput}
+                            ids="login"
                         />
+                        <div className="panel panel-default">
+                            <FormErrors formErrors={this.state.formErrors.login}/>
+                        </div>
                         <GeneralClassInFile
-                            adress = {`password has-error ${this.errorClass(this.state.formErrors.password)}`}
-                            fieldClassName = "fieldset_mod"
-                            generalText = "Пароль"
-                            typeTe = "password"
-                            name = "password"
+                            adress={`password has-error ${this.errorClass(this.state.formErrors.password)}`}
+                            fieldClassName="fieldset_mod"
+                            generalText="Пароль"
+                            typeTe="password"
+                            name="password"
                             valueC={this.state.password}
                             onChangeC={this.handleUserInput}
-                            ids = "password"
+                            ids="password"
                         />
-                        <ButtonsClassInFile
-                            classB = "flexel"
-                            typeB = "button_send"
-                            textB = "Отправить"
-                            type2B = "submit"
-                        />
+                        <div className="panel panel-default">
+                            <FormErrors formErrors={this.state.formErrors.password}/>
+                        </div>
+                        <Link to="Main">
+                            <ButtonClassInFile
+                                classB="flexel"
+                                typeB="button_send"
+                                disableB={!this.state.formValid}
+                                textB="Отправить"
+                                type2B="submit"
+                                nazal={this.handleReset}
+                            />
+                        </Link>
                     </form>
                 </div>
                 <Link to="/">
                     <ButtonClassInFile
-                        classB = "flexel"
-                        typeB = "btn btn-secondary btn-sm align_center margin_top5"
-                        textB = "Регистрация"
-                        type2B = "submit"
+                        classB="flexel"
+                        typeB="btn btn-secondary btn-sm align_center margin_top5px"
+                        textB="Регистрация"
+                        type2B="submit"
                     />
                 </Link>
             </div>
         );
     }
 }
+
 export default Login;

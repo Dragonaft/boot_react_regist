@@ -8,10 +8,11 @@ class ButtonsClassInFile extends React.Component{
         const typeB = this.props.typeB;
         const textB = this.props.textB;
         const type2B = this.props.typeB;
+        const disableB = this.props.disableB;
 
         return(
             <div className={classB}>
-                <button className={typeB} type={type2B}>{textB}</button>
+                <button className={typeB} type={type2B} disabled={disableB}>{textB}</button>
             </div>
         );
     }
