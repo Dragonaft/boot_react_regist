@@ -79,9 +79,9 @@ class MainComponent extends React.Component {
                         <nav className="navbar navbar-dark bg-dark">
                             <button className="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#collapseExample"
-                                       aria-controls="navbarToggleExternalContent" aria-expanded="false"
-                                       aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
+                                    aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
                             </button>
                             <li className="nav-item">
                                 <a className="margin_right5px" href="#">Настройки</a>
